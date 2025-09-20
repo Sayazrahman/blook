@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "target": "ES2020",
+    "types": ["node"],
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    "strict": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noFallthroughCasesInSwitch": true,
+
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@blook/ui/*": ["../../packages/ui/src/*"],
+      "@blook/store/*": ["../../packages/store/src/*"]
+    }
+  },
+  "include": ["src", "tailwind.config.js"],
+  "references": [
+    { "path": "./tsconfig.node.json" },
+    { "path": "../../packages/ui" },
+    { "path": "../../packages/store" }
+  ]
+}

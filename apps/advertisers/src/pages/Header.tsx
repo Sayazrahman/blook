@@ -14,8 +14,6 @@ import {
   Users2,
   LandPlot,
   Home,
-  BadgeIndianRupee,
-  BriefcaseBusinessIcon,
 } from "lucide-react";
 import { Button } from "@blook/ui/button";
 import {
@@ -75,79 +73,30 @@ export function Header() {
               </motion.a>
             ))}
 
-            {/* Dropdown Get Started */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button className="bg-[#ff8731] text-white hover:bg-[#1c90fc] transition-colors px-6 py-2 font-semibold flex items-center">
+                <Button className="bg-[#ff8731] text-white !rounded-md hover:bg-[#1c90fc] transition-colors px-6 py-2  flex items-center">
                   <User2 size={18} />
                   <span className="ml-2">Get Started</span>
                   <ChevronDown size={16} className="ml-2" />
                 </Button>
               </DropdownMenuTrigger>
+
               <DropdownMenuContent
-                className="w-68 p-4 border-none bg-white shadow-lg"
+                className="w-56 p-2 border-none bg-white shadow-lg"
                 align="end"
               >
-                {/* Toggle Switch */}
-                <div className="relative flex items-center bg-gray-100 rounded-full p-1 mb-4">
-                  <motion.div
-                    className="absolute top-1 bottom-1 bg-white rounded-full shadow-sm"
-                    animate={{
-                      left: isLoginMode ? "50%" : "4px",
-                      width: "calc(50% - 4px)",
-                    }}
-                    transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                  />
-                  <button
-                    className={`relative z-10 flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full transition-colors ${
-                      !isLoginMode ? "text-[#ff8731]" : "text-gray-600"
-                    }`}
-                    onClick={() => setIsLoginMode(false)}
-                  >
-                    <UserPlus size={16} /> Register
-                  </button>
-                  <button
-                    className={`relative z-10 flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full transition-colors ${
-                      isLoginMode ? "text-[#1c90fc]" : "text-gray-600"
-                    }`}
-                    onClick={() => setIsLoginMode(true)}
-                  >
-                    <LogIn size={16} /> Sign In
-                  </button>
-                </div>
-
-                {/* Dynamic Options */}
                 <div className="space-y-1">
-                  {!isLoginMode ? (
-                    <>
-                      <Link to="/registration/SpaceOwnerRegistration">
-                        <DropdownMenuItem className="cursor-pointer hover:bg-[#ff8731] hover:text-white transition-colors">
-                          <Building size={18} className="mr-2" /> Register as
-                          Space Owner
-                        </DropdownMenuItem>
-                      </Link>
-                      <DropdownMenuItem className="cursor-pointer hover:bg-[#ff8731] hover:text-white transition-colors">
-                        <Megaphone size={18} className="mr-2" /> Register as
-                        Advertiser
-                      </DropdownMenuItem>
-                    </>
-                  ) : (
-                    <>
-                      <Link to="/login/spaceOwnerLogin">
-                        <DropdownMenuItem className="cursor-pointer hover:bg-[#ff8731] hover:text-white transition-colors">
-                          <Building size={18} className="mr-2" /> Sign In as
-                          Space Owner
-                        </DropdownMenuItem>
-                      </Link>
-                      <DropdownMenuItem className="cursor-pointer hover:bg-[#ff8731] hover:text-white transition-colors">
-                        <Megaphone size={18} className="mr-2" /> Sign In as
-                        Advertiser
-                      </DropdownMenuItem>
-                      <DropdownMenuItem className="cursor-pointer hover:bg-[#ff8731] hover:text-white transition-colors">
-                        <Shield size={18} className="mr-2" /> Sign In as Admin
-                      </DropdownMenuItem>
-                    </>
-                  )}
+                  <Link to="/register">
+                    <DropdownMenuItem className="cursor-pointer hover:bg-[#ff8731] hover:text-white transition-colors">
+                      <UserPlus size={18} className="mr-2" /> Register
+                    </DropdownMenuItem>
+                  </Link>
+                  <Link to="/login">
+                    <DropdownMenuItem className="cursor-pointer hover:bg-[#ff8731] hover:text-white transition-colors">
+                      <LogIn size={18} className="mr-2" /> Login
+                    </DropdownMenuItem>
+                  </Link>
                 </div>
               </DropdownMenuContent>
             </DropdownMenu>

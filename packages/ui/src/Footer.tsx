@@ -1,6 +1,6 @@
 import { MapPin, Globe, Mail, Phone, Badge } from "lucide-react";
 import { motion } from "motion/react";
-import blookLogo from "./assets/icons/blookLogo.png";
+// import blookLogo from "./assets/icons/blookLogo.png";
 
 const Footer = () => {
   const footerColumns = [
@@ -52,7 +52,7 @@ const Footer = () => {
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
               <img
-                src={blookLogo}
+                // src={blookLogo}
                 alt="BLook Logo"
                 className="min-w-[150px] max-w-[150px] min-h-[78px] max-h-[78px] rounded-full"
               />

@@ -21,7 +21,8 @@
     "paths": {
       "@/*": ["apps/web/src/*"],
       "@blook/ui/*": ["packages/ui/src/*"],
-      "@blook/store/*": ["packages/store/src/*"]
+      "@blook/store/*": ["packages/store/src/*"],
+       "@blook/config/*": ["packages/config/*"]
     }
   }
 }
